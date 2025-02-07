@@ -4,6 +4,9 @@ import dotenv from "dotenv";
 import connectDB from "./config/db";
 import companyRoutes from "./routes/companyRoutes";
 import productRoutes from "./routes/productRoutes";
+import authRoutes from "./routes/authRoutes";
+import homeRoutes from "./routes/homeRoutes";
+
 
 dotenv.config();
 
@@ -19,6 +22,9 @@ app.use(express.json());
 // API Routes
 app.use("/api/companies", companyRoutes);
 app.use("/api/products", productRoutes);
+app.use("/api/auth", authRoutes);
+app.use("/api/home", homeRoutes);
+
 
 // Default route
 app.get("/", (req, res) => {
