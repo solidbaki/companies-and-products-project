@@ -65,7 +65,6 @@ router.post(
   }
 );
 
-// GET company by ID
 router.get(
   "/:id",
   protect,
@@ -82,7 +81,6 @@ router.get(
   }
 );
 
-// PUT update company by ID
 router.put(
   "/:id",
   protect,
@@ -103,7 +101,6 @@ router.put(
   }
 );
 
-// DELETE company by ID
 router.delete(
   "/:id",
   protect,

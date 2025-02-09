@@ -9,11 +9,10 @@ export const apiClient = axios.create({
   },
 });
 
-// Attach token automatically to all requests
 apiClient.interceptors.request.use((config) => {
-  const token = localStorage.getItem("token"); // 🔹 Retrieve stored token
+  const token = localStorage.getItem("token"); 
   if (token) {
-    config.headers.Authorization = `Bearer ${token}`; // 🔹 Attach token
+    config.headers.Authorization = `Bearer ${token}`; 
   }
   return config;
 });

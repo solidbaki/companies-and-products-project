@@ -16,7 +16,7 @@ const express_1 = __importDefault(require("express"));
 const Product_1 = __importDefault(require("../models/Product"));
 const mongoose_1 = __importDefault(require("mongoose"));
 const router = express_1.default.Router();
-// @route   GET /api/products
+
 router.get("/", (req, res, next) => __awaiter(void 0, void 0, void 0, function* () {
     try {
         const products = yield Product_1.default.find().populate("company");
@@ -26,7 +26,7 @@ router.get("/", (req, res, next) => __awaiter(void 0, void 0, void 0, function* 
         next(error);
     }
 }));
-// @route   POST /api/products
+
 router.post("/", (req, res, next) => __awaiter(void 0, void 0, void 0, function* () {
     try {
         const { name, category, productAmount, amountUnit, company } = req.body;
@@ -38,7 +38,7 @@ router.post("/", (req, res, next) => __awaiter(void 0, void 0, void 0, function*
         next(error);
     }
 }));
-// @route   GET /api/products/:id
+
 router.get("/:id", (req, res, next) => __awaiter(void 0, void 0, void 0, function* () {
     try {
         const productId = req.params.id;
@@ -54,7 +54,7 @@ router.get("/:id", (req, res, next) => __awaiter(void 0, void 0, void 0, functio
         next(error);
     }
 }));
-// @route   PUT /api/products/:id
+
 router.put("/:id", (req, res) => __awaiter(void 0, void 0, void 0, function* () {
     try {
         const productId = req.params.id;
@@ -70,7 +70,7 @@ router.put("/:id", (req, res) => __awaiter(void 0, void 0, void 0, function* () 
         next(error);
     }
 }));
-// @route   DELETE /api/products/:id
+
 router.delete("/:id", (req, res, next) => __awaiter(void 0, void 0, void 0, function* () {
     try {
         const productId = req.params.id;

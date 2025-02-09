@@ -74,7 +74,6 @@ const Products = () => {
       .catch(() => message.error("Failed to fetch companies."));
   };
 
-  // Open Add/Edit Modal
   const showModal = (product?: Product) => {
     setIsEditMode(!!product);
     setEditingProduct(product || null);
@@ -91,7 +90,6 @@ const Products = () => {
     setEditingProduct(null);
   };
 
-  // Handle Add/Edit Submission
   const handleFormSubmit = (values: Omit<Product, "_id">) => {
     if (isEditMode && editingProduct) {
       apiClient
@@ -114,7 +112,6 @@ const Products = () => {
     }
   };
 
-  // Handle Delete Product
   const handleDelete = (productId: string) => {
     apiClient
       .delete(`/products/${productId}`)
@@ -125,7 +122,6 @@ const Products = () => {
       .catch(() => message.error("Failed to delete product."));
   };
 
-  // Search Functionality
   const getColumnSearchProps = (
     dataIndex: keyof Product
   ): ColumnType<Product> => ({
@@ -176,7 +172,6 @@ const Products = () => {
     },
   });
 
-  // Table Columns
   const columns: ColumnType<Product>[] = [
     {
       title: "Product Name",
@@ -252,7 +247,6 @@ const Products = () => {
         boxShadow: "0 4px 8px rgba(0,0,0,0.1)",
       }}
     >
-      {/* Product Table */}
       <Table
         columns={columns}
         dataSource={Array.isArray(products) ? products : []}
@@ -262,12 +256,11 @@ const Products = () => {
         bordered
       />
 
-      {/* Add/Edit Product Modal */}
       <Modal
         title={isEditMode ? "Edit Product" : "Add New Product"}
         open={isModalVisible}
         onCancel={handleCancel}
-        footer={null} // ✅ Keep footer null to use custom form buttons
+        footer={null}
       >
         <Form layout="vertical" form={form} onFinish={handleFormSubmit}>
           <Form.Item
@@ -311,7 +304,6 @@ const Products = () => {
               ))}
             </Select>
           </Form.Item>
-          {/* ✅ Add Submit & Cancel Buttons */}
           <Form.Item>
             <Space>
               <Button type="primary" htmlType="submit">

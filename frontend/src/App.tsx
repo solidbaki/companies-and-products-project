@@ -7,6 +7,7 @@ import Products from "./pages/Products";
 import Login from "./pages/Login";
 import Navbar from "./components/Navbar";
 import { AuthProvider, useAuth } from "./context/AuthContext";
+import Register from "./pages/Register";
 
 const { Content } = Layout;
 
@@ -22,6 +23,7 @@ const App = () => {
               <Route path="/companies" element={<ProtectedRoute><Companies /></ProtectedRoute>} />
               <Route path="/products" element={<ProtectedRoute><Products /></ProtectedRoute>} />
               <Route path="/login" element={<Login />} />
+              <Route path="/register" element={<Register />} />
             </Routes>
           </Content>
         </Layout>

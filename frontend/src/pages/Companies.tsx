@@ -57,7 +57,6 @@ const Companies = () => {
       .finally(() => setLoading(false));
   };
 
-  // Open Add/Edit Modal
   const showModal = (company?: Company) => {
     setIsEditMode(!!company);
     setEditingCompany(company || null);
@@ -74,7 +73,6 @@ const Companies = () => {
     setEditingCompany(null);
   };
 
-  // Handle Add/Edit Submission
   const handleFormSubmit = (values: Omit<Company, "_id">) => {
     if (isEditMode && editingCompany) {
       apiClient
@@ -97,7 +95,6 @@ const Companies = () => {
     }
   };
 
-  // Handle Delete Company
   const handleDelete = (companyId: string) => {
     apiClient
       .delete(`/companies/${companyId}`)
@@ -108,7 +105,6 @@ const Companies = () => {
       .catch(() => message.error("Failed to delete company."));
   };
 
-  // Search Functionality
   const getColumnSearchProps = (
     dataIndex: keyof Company
   ): ColumnType<Company> => ({
@@ -159,7 +155,6 @@ const Companies = () => {
     },
   });
 
-  // Table Columns
   const columns: ColumnType<Company>[] = [
     {
       title: "Company Name",

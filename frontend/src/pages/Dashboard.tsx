@@ -26,7 +26,6 @@ const Dashboard = () => {
       />
     );
 
-  // 🔹 Prepare Pie Chart Data
   const companyChartData = data?.companyDistribution?.map((item: any) => ({
     name: item._id,
     value: item.count,
@@ -37,7 +36,6 @@ const Dashboard = () => {
     value: item.count,
   }));
 
-  // 🔹 Colors for Pie Chart
   const COLORS = ["#1890ff", "#13c2c2", "#fa541c", "#fadb14", "#9254de"];
 
   return (
@@ -54,7 +52,6 @@ const Dashboard = () => {
         Dashboard
       </Title>
 
-      {/* Summary Cards - Shorter and Wider */}
       <Row gutter={[16, 16]} style={{ marginBottom: 20 }} justify="center">
         <Col xs={24} sm={12}>
           <Card
@@ -66,7 +63,7 @@ const Dashboard = () => {
               textAlign: "center",
               borderRadius: "12px",
               boxShadow: "0 4px 8px rgba(0,0,0,0.1)",
-              height: "150px", // Shorter height
+              height: "150px",
             }}
           >
             <Title level={2} style={{ color: "white", margin: 0 }}>
@@ -84,7 +81,7 @@ const Dashboard = () => {
               textAlign: "center",
               borderRadius: "12px",
               boxShadow: "0 4px 8px rgba(0,0,0,0.1)",
-              height: "150px", // Shorter height
+              height: "150px",
             }}
           >
             <Title level={2} style={{ color: "white", margin: 0 }}>
@@ -95,7 +92,6 @@ const Dashboard = () => {
       </Row>
 
       <Row gutter={[16, 16]}>
-        {/* 🔹 Companies Distribution Pie Chart */}
         <Col xs={24} md={12}>
           <Card
             title="Company Distribution by Country"
@@ -128,7 +124,6 @@ const Dashboard = () => {
           </Card>
         </Col>
 
-        {/* 🔹 Products Distribution Pie Chart */}
         <Col xs={24} md={12}>
           <Card
             title="Product Distribution by Category"
@@ -163,7 +158,6 @@ const Dashboard = () => {
       </Row>
 
       <Row gutter={[16, 16]} style={{ marginTop: 20 }}>
-        {/* Latest Companies Table */}
         <Col xs={24} md={12}>
           <Card
             title="Latest Companies"
@@ -183,7 +177,6 @@ const Dashboard = () => {
           </Card>
         </Col>
 
-        {/* Latest Products Table */}
         <Col xs={24} md={12}>
           <Card
             title="Latest Products"

@@ -24,4 +24,3 @@ const connectDB = () => __awaiter(void 0, void 0, void 0, function* () {
     }
 });
 exports.default = connectDB;
-//export {};  // ✅ Fix: Ensures the file is recognized as a module

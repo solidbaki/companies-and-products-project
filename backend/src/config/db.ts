@@ -11,4 +11,3 @@ const connectDB = async () => {
 };
 
 export default connectDB;
-//export {};  // ✅ Fix: Ensures the file is recognized as a module
